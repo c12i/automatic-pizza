@@ -30,12 +30,12 @@ def repeatorder():
     driver.find_element_by_class_name('payment-img').click()
     driver.find_element_by_id('shop_checkout_type_place_order_button').click()
 
-
-
-if response.headers['Date'][0:3] == 'Fri':
+    
+while response.headers['Date'][0:3] == 'Fri':
     repeatorder()
     logintourl()
+    break
 else:
-    print('Wait till Friday')
+    print('Not Yet Friday')
     driver.close()
     
