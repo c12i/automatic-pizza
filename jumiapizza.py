@@ -13,6 +13,7 @@ url3 = 'https://food.jumia.co.ke/cart/reorder-now/k4gz-8lip'
 #Debonairs Friday Thrill
 url4 = 'https://food.jumia.co.ke/review-order/k4gz'
 
+#You need to indicate the filepath of the chromedriver
 driver = webdriver.Chrome('/Users/collins/Desktop/python_projects/auto_login/chromedriver')
 
 def logintourl():
@@ -31,9 +32,10 @@ def repeatorder():
 
 
 
-while response.headers['Date'] == 'Fri, 14 Jun 2019 09:00:00 GMT':
-    logintourl()
+while response.headers['Date'][0:3] == 'Fri'
     repeatorder()
+    logintourl()
 else:
+    print('Wait till Friday')
     driver.close()
-    print('It is not yet time, be patient')
+    
