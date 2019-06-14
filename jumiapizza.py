@@ -32,10 +32,12 @@ def repeatorder():
 
 
 
-while response.headers['Date'][0:3] == 'Fri'
-    repeatorder()
-    logintourl()
-else:
-    print('Wait till Friday')
-    driver.close()
+while True
+    if response.headers['Date'][0:3] == 'Fri':
+        repeatorder()
+        logintourl()
+        break
+    else:
+        print('Wait till Friday')
+        driver.close()
     
